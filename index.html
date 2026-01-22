@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaturnGDPS</title>
+
+  <style>
+    :root {
+      --bg: #0b0d14;
+      --card: #151a2d;
+      --accent: #7c7cff;
+      --text: #eaeaf0;
+      --muted: #a0a3c2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #121633, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 13, 20, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center; /* vertically centers all links and images */
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center; /* ensures icon aligns with text */
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Discord icon in navbar */
+    .nav-links .discord-link img {
+      width: 36px;
+      height: 36px;
+      margin-left: 20px;
+      transition: transform 0.2s, filter 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links .discord-link img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px #7289da);
+    }
+
+    /* HEADER */
+    header {
+      padding: 60px 20px 40px; /* top: 60px, bottom: 40px → less space */
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header span {
+      color: var(--accent);
+    }
+
+    header p {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px; /* smaller margin-top to bring button closer */
+      padding: 14px 34px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(124,124,255,0.4);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 600px){
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 10px;
+      }
+      .nav-links .discord-link img {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Saturn<span>GDPS</span></div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="demonlist.html">DemonList</a>
+        <!-- Discord Icon -->
+        <a href="https://discord.gg/2UpYJncdke" target="_blank" class="discord-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Saturn<span>GDPS</span></h1>
+    <p>
+      A Geometry Dash Private Server made for creativity, accessibility,
+      and a chill but active community.
+    </p>
+    <a class="btn" id="downloadBtn" href="#" target="_blank">Download</a>
+  </header>
+
+  <section>
+    <h2>Why join SaturnGDPS?</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>⭐ Fair Rate Standards</h3>
+        <p>
+          Relaxed rate standards make it easier to get rated,
+          while still keeping levels fun and worth playing.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎵 Custom Songs</h3>
+        <p>
+          Use server-hosted custom songs and suggest your own tracks
+          to be added to the song list.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧩 Geode Included</h3>
+        <p>
+          Geode comes pre-installed, giving you instant access
+          to mods and extra features.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📈 Easy Progression</h3>
+        <p>
+          Be active, help others, and climb roles naturally —
+          with real chances to become staff.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💬 Community Focused</h3>
+        <p>
+          Share levels, get feedback, join events,
+          and be part of a growing creator-friendly community.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🛠️ Stable & Updated</h3>
+        <p>
+          The server is actively maintained with fixes,
+          improvements, and new features added over time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 SaturnGDPS — Not affiliated with RobTop Games
+  </footer>
+
+  <script>
+    const downloadLink = "https://cdn.discordapp.com/attachments/1463877092470165606/1464019385348919450/SaturnGDPS.zip?ex=6973f1cd&is=6972a04d&hm=7dab9e5875494abeb198c5675e61a5f633482dece1d6dffb821d3c964fafa71d&";
+    document.getElementById("downloadBtn").href = downloadLink;
+  </script>
+
+</body>
+</html>

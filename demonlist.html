@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SaturnGDPS – Demon List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #0b0d14;
+      --card: #151a2d;
+      --accent: #7c7cff;
+      --text: #eaeaf0;
+      --muted: #a0a3c2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #121633, var(--bg));
+      color: var(--text);
+    }
+
+    /* NAVBAR (Home page style applied) */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 13, 20, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center; /* vertically center all links and icon */
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center; /* ensures icon aligns with text */
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Discord icon in navbar */
+    .nav-links .discord-link img {
+      width: 36px;
+      height: 36px;
+      margin-left: 15px;
+      transition: transform 0.2s, filter 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links .discord-link img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px #7289da);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    /* CARD STYLES */
+    .card {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 15px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.15s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 225px;  
+      height: 120px; 
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px; /* spacing between text lines */
+    }
+
+    .card .rank {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .card strong {
+      font-size: 1.2rem;
+    }
+
+    .card .muted {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+    }
+
+    .modal-content {
+      background: var(--card);
+      max-width: 800px;
+      width: 95%;
+      padding: 25px;
+      border-radius: 15px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .close {
+      float: right;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .completion-list {
+      margin-top: 20px;
+    }
+
+    .completion-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .completion-list a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      iframe {
+        height: 250px;
+      }
+      .card img {
+        width: 180px;
+        height: 95px;
+      }
+    }
+
+    @media(max-width: 600px){
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 10px;
+      }
+      .nav-links .discord-link img {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Saturn<span>GDPS</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">DemonList</a>
+      <!-- Discord Icon -->
+      <a href="https://discord.gg/2UpYJncdke" target="_blank" class="discord-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <h1>🔥 Demon List</h1>
+
+  <div class="layout">
+    <!-- DEMON LIST -->
+    <div>
+      <h2>Levels</h2>
+      <div id="demonList"></div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div>
+      <h2>🏆 Player Leaderboard</h2>
+
+      <div class="card">
+        <strong>#1 ??</strong><br>
+        <span class="muted">List Points: 0</span>
+      </div>
+
+      <div class="card">
+        <strong>#2 ??</strong><br>
+        <span class="muted">List Points: 0</span>
+      </div>
+
+      <div class="card">
+        <strong>#3 ??</strong><br>
+        <span class="muted">List Points: 0</span>
+      </div>
+
+      <div class="card">
+        <strong>#4 ??</strong><br>
+        <span class="muted">List Points: 0</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  const demons = [
+    {
+      placement: 1,
+      name: "??",
+      creator: "??",
+      points: 100,
+      image: "https://static.vecteezy.com/system/resources/thumbnails/046/288/928/small_2x/question-mark-sign-neon-on-black-background-free-video.jpg",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      completions: [
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ]
+    },
+    {
+      placement: 2,
+      name: "??",
+      creator: "??",
+      points: 90,
+      image: "https://static.vecteezy.com/system/resources/thumbnails/046/288/928/small_2x/question-mark-sign-neon-on-black-background-free-video.jpg",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      completions: [
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ]
+    },
+    {
+      placement: 3,
+      name: "??",
+      creator: "??",
+      points: 80,
+      image: "https://static.vecteezy.com/system/resources/thumbnails/046/288/928/small_2x/question-mark-sign-neon-on-black-background-free-video.jpg",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      completions: [
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ]
+    },
+    {
+      placement: 4,
+      name: "??",
+      creator: "??",
+      points: 70,
+      image: "https://static.vecteezy.com/system/resources/thumbnails/046/288/928/small_2x/question-mark-sign-neon-on-black-background-free-video.jpg",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      completions: [
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ]
+    },
+    {
+      placement: 5,
+      name: "??",
+      creator: "??",
+      points: 60,
+      image: "https://static.vecteezy.com/system/resources/thumbnails/046/288/928/small_2x/question-mark-sign-neon-on-black-background-free-video.jpg",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      completions: [
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { player: "??", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ]
+    },
+    
+    // Add more levels here
+  ];
+
+  const list = document.getElementById("demonList");
+
+  demons.forEach(demon => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <img src="${demon.image}" alt="${demon.name}">
+      <div>
+        <div class="rank">#${demon.placement}</div>
+        <strong>${demon.name}</strong>
+        <span class="muted">By ${demon.creator} • ${demon.points} pts</span>
+      </div>
+    `;
+    div.onclick = () => openModal(demon);
+    list.appendChild(div);
+  });
+
+  function openModal(demon) {
+    let completionsHTML = "";
+    if (demon.completions && demon.completions.length > 0) {
+      completionsHTML = `<div class="completion-list"><strong>Completions:</strong><ul>`;
+      demon.completions.forEach(c => {
+        completionsHTML += `<li><a href="${c.video}" target="_blank">${c.player}</a></li>`;
+      });
+      completionsHTML += "</ul></div>";
+    }
+
+    document.getElementById("modalBody").innerHTML = `
+      <h2>#${demon.placement} – ${demon.name}</h2>
+      <p class="muted">Created by ${demon.creator}</p>
+      <p><strong>List Points:</strong> ${demon.points}</p>
+      <iframe src="${demon.video}" allowfullscreen></iframe>
+      ${completionsHTML}
+    `;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
